@@ -1,0 +1,32 @@
+{
+  "name": "arboard",
+  "version": "1.0.0",
+  "description": "A powerful web-based application for mapping and visualizing human relationships",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 3000 -o",
+    "dev": "http-server -p 3000 -o -c-1",
+    "serve": "http-server -p 8080 -o"
+  },
+  "keywords": [
+    "relationship",
+    "mapping",
+    "visualization",
+    "graph",
+    "diagram",
+    "web-app"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/arboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/arboard/issues"
+  },
+  "homepage": "https://github.com/yourusername/arboard#readme"
+}

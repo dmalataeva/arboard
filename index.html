@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arboard - Relationship Mapper</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Top Toolbar -->
+    <div class="toolbar">
+        <div class="toolbar-left">
+            <h1 class="app-title">Arboard</h1>
+            <button id="newBoardBtn" class="toolbar-btn" title="New Board">
+                <span>📋</span> New Board
+            </button>
+            <button id="openFileBtn" class="toolbar-btn" title="Open File">
+                <span>📁</span> Open
+            </button>
+            <input type="file" id="fileInput" accept=".arb,.json" style="display: none;">
+            <button id="saveFileBtn" class="toolbar-btn" title="Save File">
+                <span>💾</span> Save
+            </button>
+        </div>
+        <div class="toolbar-right">
+            <button id="exportImageBtn" class="toolbar-btn" title="Export as Image">
+                <span>🖼️</span> Export
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar left-sidebar">
+            <div class="sidebar-section">
+                <h3>Boards</h3>
+                <div id="boardsList" class="boards-list"></div>
+            </div>
+            <div class="sidebar-section">
+                <h3>Tools</h3>
+                <div class="tools">
+                    <button id="addNodeBtn" class="tool-btn active" title="Add Node">
+                        <span>👤</span> Add Person
+                    </button>
+                    <button id="addConnectionBtn" class="tool-btn" title="Connect People">
+                        <span>🔗</span> Connect
+                    </button>
+                    <button id="selectBtn" class="tool-btn" title="Select/Move">
+                        <span>👆</span> Select
+                    </button>
+                    <button id="deleteBtn" class="tool-btn" title="Delete">
+                        <span>🗑️</span> Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Canvas Area -->
+        <div class="canvas-container">
+            <div id="canvasWrapper" class="canvas-wrapper">
+                <svg id="canvas" class="canvas"></svg>
+            </div>
+            <div id="contextMenu" class="context-menu" style="display: none;">
+                <div class="context-menu-item" data-action="edit">Edit</div>
+                <div class="context-menu-item" data-action="delete">Delete</div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar (Properties Panel) -->
+        <div class="sidebar right-sidebar">
+            <div class="sidebar-section">
+                <h3>Properties</h3>
+                <div id="propertiesPanel" class="properties-panel">
+                    <p class="empty-state">Select a node or connection to edit its properties</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for editing -->
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modalTitle">Edit</h2>
+            <div id="modalBody"></div>
+            <div class="modal-actions">
+                <button id="modalSave" class="btn btn-primary">Save</button>
+                <button id="modalCancel" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
